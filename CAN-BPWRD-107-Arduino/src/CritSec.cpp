@@ -33,7 +33,9 @@ extern "C" void crit_sec_enter()
 
 extern "C" void crit_sec_leave()
 {
+  //__enable_irq(); //should this be here?
   __set_PRIMASK(primask_bit);
+  
 }
 
 //#endif /* ARDUINO_ARCH_STM32 */
