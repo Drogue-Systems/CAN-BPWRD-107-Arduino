@@ -53,7 +53,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   {
-    //CriticalSection crit_sec;
+    //CriticalSection crit_sec; //SEE COMMENT IN transmitCyphalFrame() FUCNTION!!!!
     node_hdl.spinSome();
   }
 
@@ -171,9 +171,9 @@ static void handleCanMessage(FDCAN_RxHeaderTypeDef rxHeader, uint8_t *rxData)
 
 bool transmitCyphalFrame(CanardFrame const & frame)
 /*
-This cannot have serial prints in it, they make use of
+This cannot have serial.prints in it, they make use of
 interrupts on both tx and rx. The Critical Sections in this code
-blocks interrupts. This functiins is called within a Critical
+block interrupts. This functiins is called within a Critical
 Section. If there is a serial print in here, the program will 
 crash / hang.
 
