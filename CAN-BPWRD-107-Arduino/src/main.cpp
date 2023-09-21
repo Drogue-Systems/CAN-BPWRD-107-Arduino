@@ -173,7 +173,7 @@ bool transmitCyphalFrame(CanardFrame const & frame)
 /*
 This cannot have serial.prints in it, they make use of
 interrupts on both tx and rx. The Critical Sections in this code
-block interrupts. This functiins is called within a Critical
+block interrupts. This function is is called within a Critical
 Section. If there is a serial print in here, the program will 
 crash / hang.
 
