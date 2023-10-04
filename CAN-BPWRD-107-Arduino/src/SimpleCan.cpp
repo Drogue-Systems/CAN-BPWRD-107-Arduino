@@ -34,7 +34,7 @@ SimpleCan::SimpleCan(int _shutdown_pin, int _terminate_transceiver_pin)
 	
 }
 
-HAL_StatusTypeDef SimpleCan::start(void)
+HAL_StatusTypeDef SimpleCan::start(void) 
 {
 	digitalWrite(shutdown_pin, LOW);
 	return HAL_FDCAN_Start(&_hfdcan1);
