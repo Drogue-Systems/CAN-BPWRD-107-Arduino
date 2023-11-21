@@ -92,7 +92,7 @@ void loop() {
 
   {
 	#ifndef CAN_PRINT_TEST
-    //CriticalSection crit_sec;
+    CriticalSection crit_sec;
 	#endif
 
     node_hdl.spinSome();
